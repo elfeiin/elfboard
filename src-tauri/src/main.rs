@@ -17,7 +17,7 @@ const COMMANDS: &[u8] = &[];
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn set(index: u8, value: u8) {
-    println!["setting"];
+    println!["setting {index}{value}"];
     unsafe {
         STATE.last_duet = Some(index);
     }
@@ -43,7 +43,7 @@ fn exited(index: u8) {
                         STATE.pressing = true;
                     }
                     // emit char
-                    println!["emitting character"];
+                    println!["{c}"];
                 } else {
                     unsafe {
                         STATE = State {
@@ -70,11 +70,8 @@ fn reset() {
 }
 
 fn main() {
-    println!["hello"];
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![set])
-        .invoke_handler(tauri::generate_handler![exited])
-        .invoke_handler(tauri::generate_handler![reset])
+        .invoke_handler(tauri::generate_handler![set, exited, reset])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

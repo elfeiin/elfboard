@@ -1,7 +1,6 @@
 const { invoke } = window.__TAURI__.tauri;
 
 async function set(i, n) {
-  console.log("over " + i);
   await invoke("set", { index: i, value: n });
 }
 
@@ -14,23 +13,21 @@ async function reset() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("hello from js!");
   document
     .querySelector("body")
     .addEventListener("touchend", () => reset());
   document
     .querySelector("#leftinator")
-    .addEventListener("onmouseenter", () => exited(0));
+    .addEventListener("mouseenter", () => exited(0));
   document
     .querySelector("#rightinator")
-    .addEventListener("onmouseenter", () => exited(3));
+    .addEventListener("mouseenter", () => exited(3));
   for (let i = 0; i < 4; i++) {
     for (let n = 0; n < 4; n++) {
+      let q = ("#q" + i) + n;
       document
-        .querySelector(("#q" + i) + n)
-        .addEventListener("onmouseover", () => set(i, n));
+        .querySelector(q)
+        .addEventListener("mouseover", () => set(i, n));
     }
   }
 });
-
-console.log("hello from js!");

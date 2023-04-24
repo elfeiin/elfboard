@@ -14,21 +14,41 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+  height: 50%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
 .container {
   margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   text-align: center;
+  height: 100%;
 }
 
 .row {
   display: flex;
   justify-content: center;
+  text-align: center;
+  height: 100%;
 }
 
 .col {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.col > div {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
