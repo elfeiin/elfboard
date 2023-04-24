@@ -2,8 +2,8 @@
   "build": {
     "beforeDevCommand": "",
     "beforeBuildCommand": "",
-    "devPath": "../src",
-    "distDir": "../src",
+    "devPath": "../ui",
+    "distDir": "../ui",
     "withGlobalTauri": true
   },
   "package": {
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "elfboard",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
