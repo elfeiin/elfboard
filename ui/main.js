@@ -20,10 +20,10 @@ window.addEventListener("DOMContentLoaded", () => {
     let q = "#k" + i;
     document
       .querySelector(q)
-      .addEventListener("mouseover", () => entered_key(i));
+      .addEventListener("touchstart", () => entered_key(i));
   }
   document.querySelector("#left")
-    .addEventListener("mouseover", () => entered_end());
+    .addEventListener("touchstart", () => entered_end());
   document.querySelector("#right")
-    .addEventListener("mouseover", () => entered_end());
+    .addEventListener("touchstart", () => entered_end());
 });
