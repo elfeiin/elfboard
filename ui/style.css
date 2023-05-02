@@ -23,7 +23,7 @@ body {
   height: 100%;
 }
 
-.key:active {
+.key:hover {
   background-color: #202020;
 }
 
