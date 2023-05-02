@@ -16,12 +16,12 @@ async function lifted() {
 }
 
 async function swipe_hover(e) {
-  let cx = e.touches[0].clientX;
-  let cy = e.touches[0].clientY;
-  let e = document.elementFromPoint(cx,cy);
   document.querySelectorAll(".shine").forEach((e) => {
     e.classList.remove("shine");
   });
+  let cx = e.touches[0].clientX;
+  let cy = e.touches[0].clientY;
+  let e = document.elementFromPoint(cx,cy);
   if (e.classList.contains("key")) {
     e.classList.add("shine");
   }
