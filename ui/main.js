@@ -37,8 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
     .querySelector("body");
   body.addEventListener("touchmove", swipe_hover);
   body.addEventListener("touchend", () => lifted());
-  for (let i = 0; i < 16; i++) {
-    let q = "#k" + i;
+  // for (let i = 0; i < 16; i++) {
+    // let q = "#k" + i;
     // document.querySelector(q).key_num = i;
-  }
+  // }
 });
